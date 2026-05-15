@@ -1,0 +1,19 @@
+{
+  "assignAutomerge": true,
+  "assigneesFromCodeOwners": true,
+  "automerge": false,
+  "automergeStrategy": "rebase-merge",
+  "baseBranchPatterns": ["main"],
+  "cloneSubmodules": false,
+  "configMigration": true,
+  "forkProcessing": "disabled",
+  "osvVulnerabilityAlerts": true,
+  "platformAutomerge": false,
+  "reviewersFromCodeOwners": true,
+  "semanticCommits": "enabled",
+  "timezone": "Europe/Berlin",
+  "updatePinnedDependencies": false,
+  "useBaseBranchConfig": "merge",
+
+  "extends": [":semanticCommits"]
+}
