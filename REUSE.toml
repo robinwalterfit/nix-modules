@@ -1,0 +1,46 @@
+# SPDX-FileCopyrightText: 2026 Robin Walter <hello@robinwalter.me>
+# SPDX-License-Identifier: CC0-1.0
+
+'$schema' = 'https://reuse.software/reuse-toml-v1.schema.json'
+version = 1
+
+[[annotations]]
+SPDX-FileCopyrightText = '2026 Robin Walter <hello@robinwalter.me>'
+SPDX-License-Identifier = 'CC0-1.0'
+path = [
+  '.zed/settings.json',
+  'nix/dev/flake.lock',
+  '.envrc',
+  '.taplo.toml',
+  'allowed_signers',
+  'flake.lock',
+  'renovate.json',
+]
+precedence = 'aggregate'
+
+[[annotations]]
+SPDX-FileCopyrightText = '2026 Robin Walter <hello@robinwalter.me>'
+SPDX-License-Identifier = 'CC-BY-4.0'
+path = ['CONTRIBUTING.md', 'README.md']
+precedence = 'aggregate'
+
+[[annotations]]
+SPDX-FileCopyrightText = '2026 Robin Walter <hello@robinwalter.me>'
+SPDX-License-Identifier = 'MIT OR Apache-2.0'
+path = ['biome.json']
+precedence = 'aggregate'
+
+[[annotations]]
+SPDX-FileCopyrightText = '2019 Hercules Labs OÜ'
+SPDX-License-Identifier = 'Apache-2.0'
+path = ['.pre-commit-config.yaml']
+precedence = 'override'
+
+[[annotations]]
+SPDX-FileCopyrightText = [
+  '2026 Organization for Ethical Source <info@ethicalsource.dev>',
+  '2026 Robin Walter <hello@robinwalter.me>',
+]
+SPDX-License-Identifier = 'CC-BY-SA-4.0'
+path = ['.github/CODE_OF_CONDUCT.md']
+precedence = 'override'
