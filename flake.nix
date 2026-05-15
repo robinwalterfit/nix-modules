@@ -28,7 +28,9 @@
         };
 
         # Provide flake modules
-        flakeModules = { };
+        flakeModules = {
+          treefmt = ./nix/modules/treefmt.nix;
+        };
 
         # Provide templates
         templates = { };
