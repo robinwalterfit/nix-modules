@@ -21,6 +21,12 @@
           in
           meta // packages;
 
+        # Provide devenv modules
+        devenvModules = {
+          git-hooks = ./nix/modules/devenv/git-hooks.nix;
+          shell-base = ./nix/modules/devenv/shell-base.nix;
+        };
+
         # Provide flake modules
         flakeModules = { };
 
@@ -53,6 +59,7 @@
 
         flake = {
           inherit
+            devenvModules
             flakeModules
             lib
             templates
