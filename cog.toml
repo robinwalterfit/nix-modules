@@ -1,0 +1,9 @@
+# SPDX-FileCopyrightText: 2026 Robin Walter <hello@robinwalter.me>
+# SPDX-License-Identifier: CC0-1.0
+#
+# General
+ignore_fixup_commits = true
+ignore_merge_commits = true
+skip_ci = "[ci skip]"
+skip_untracked = true
+tag_prefix = "v"
