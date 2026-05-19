@@ -113,6 +113,10 @@ nix-modules/
 - `templates/`: Provides templates which can be used via: `nix flake init --template github:robinwalterfit/nix-modules#<TEMPLATE>`
 - `flake.nix`: Main flake file following `flake-parts`.
 
+## Templates
+
+This project provides different templates. The templates themselves are licensed under public domain (see [CC0-1.0](./LICENSES/CC0-1.0.txt)). Choose any template which suits your needs. However, note that some files are provided which cannot be licensed under public domain. Check the `REUSE.toml` file in any template's root directory and review all file's license comment header. Delete any files you do not need or want in your project.
+
 ## Contributing
 
 Read the [contributing guide](./CONTRIBUTING.md) to learn about the development process and how to submit changes.
