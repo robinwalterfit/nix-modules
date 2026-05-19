@@ -15,5 +15,9 @@
   "updatePinnedDependencies": false,
   "useBaseBranchConfig": "merge",
 
-  "extends": [":semanticCommits"]
+  "extends": [":semanticCommits"],
+
+  "nix": {
+    "enabled": true
+  }
 }
