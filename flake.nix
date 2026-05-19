@@ -33,7 +33,14 @@
         };
 
         # Provide templates
-        templates = { };
+        templates = {
+          simple = {
+            description = "A simple template to start from scratch.";
+            path = ./templates/simple;
+          };
+
+          defaultTemplate = self.templates.simple;
+        };
       in
       {
         systems = [ ];
