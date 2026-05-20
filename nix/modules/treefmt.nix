@@ -10,7 +10,6 @@ let
   inherit (lib)
     literalExpression
     literalMD
-    mkDefault
     mkOption
     recursiveUpdate
     types
@@ -36,16 +35,16 @@ in
           "$schema" = "${pkgs.biome}/share/schema.json";
           css = {
             formatter = {
-              enabled = mkDefault true;
-              indentStyle = mkDefault "space";
-              indentWidth = mkDefault 2;
+              enabled = true;
+              indentStyle = "space";
+              indentWidth = 2;
             };
             linter = {
-              enabled = mkDefault true;
+              enabled = true;
             };
             parser = {
-              cssModules = mkDefault true;
-              tailwindDirectives = mkDefault true;
+              cssModules = true;
+              tailwindDirectives = true;
             };
           };
           files = {
@@ -55,61 +54,61 @@ in
             ];
           };
           formatter = {
-            attributePosition = mkDefault "auto";
-            enabled = mkDefault true;
-            formatWithErrors = mkDefault true;
-            indentStyle = mkDefault "space";
-            indentWidth = mkDefault 2;
-            lineEnding = mkDefault "lf";
-            lineWidth = mkDefault 120;
+            attributePosition = "auto";
+            enabled = true;
+            formatWithErrors = true;
+            indentStyle = "space";
+            indentWidth = 2;
+            lineEnding = "lf";
+            lineWidth = 120;
           };
           graphql = {
             formatter = {
-              enabled = mkDefault true;
-              indentStyle = mkDefault "space";
+              enabled = true;
+              indentStyle = "space";
             };
             linter = {
-              enabled = mkDefault true;
+              enabled = true;
             };
           };
           javascript = {
             formatter = {
-              jsxQuoteStyle = mkDefault "double";
+              jsxQuoteStyle = "double";
             };
           };
           json = {
             formatter = {
-              enabled = mkDefault true;
-              trailingCommas = mkDefault "none";
+              enabled = true;
+              trailingCommas = "none";
             };
           };
           linter = {
             rules = {
               a11y = {
-                noAriaUnsupportedElements = mkDefault "warn";
-                useAltText = mkDefault "warn";
-                useAriaPropsForRole = mkDefault "warn";
-                useValidAriaProps = mkDefault "warn";
-                useValidAriaValues = mkDefault "warn";
+                noAriaUnsupportedElements = "warn";
+                useAltText = "warn";
+                useAriaPropsForRole = "warn";
+                useValidAriaProps = "warn";
+                useValidAriaValues = "warn";
               };
               correctness = {
-                noChildrenProp = mkDefault "error";
-                useExhaustiveDependencies = mkDefault "warn";
-                useHookAtTopLevel = mkDefault "error";
-                useJsxKeyInIterable = mkDefault "error";
+                noChildrenProp = "error";
+                useExhaustiveDependencies = "warn";
+                useHookAtTopLevel = "error";
+                useJsxKeyInIterable = "error";
               };
-              recommended = mkDefault false;
+              recommended = false;
               security = {
-                noDangerouslySetInnerHtmlWithChildren = mkDefault "error";
-                noBlankTarget = mkDefault "error";
+                noDangerouslySetInnerHtmlWithChildren = "error";
+                noBlankTarget = "error";
               };
               style = {
-                noImplicitBoolean = mkDefault "error";
-                useFragmentSyntax = mkDefault "error";
+                noImplicitBoolean = "error";
+                useFragmentSyntax = "error";
               };
               suspicious = {
-                noCommentText = mkDefault "error";
-                noDuplicateJsxProps = mkDefault "error";
+                noCommentText = "error";
+                noDuplicateJsxProps = "error";
               };
             };
           };
@@ -119,18 +118,18 @@ in
               linter = {
                 rules = {
                   correctness = {
-                    noUnusedImports = mkDefault "off";
-                    noUnusedVariables = mkDefault "off";
+                    noUnusedImports = "off";
+                    noUnusedVariables = "off";
                   };
                 };
               };
             }
           ];
-          root = mkDefault true;
+          root = true;
           vcs = {
-            clientKind = mkDefault "git";
-            enabled = mkDefault true;
-            useIgnoreFile = mkDefault true;
+            clientKind = "git";
+            enabled = true;
+            useIgnoreFile = true;
           };
         };
         # SPDX-SnippetEnd
@@ -140,9 +139,9 @@ in
         # SPDX-License-Identifier: CC0-1.0
         defaultClippyConfig = {
           # See https://doc.rust-lang.org/clippy/lint_configuration.html for all available lints
-          allow-expect-in-tests = mkDefault true;
-          allow-unwrap-in-tests = mkDefault true;
-          check-private-items = mkDefault true;
+          allow-expect-in-tests = true;
+          allow-unwrap-in-tests = true;
+          check-private-items = true;
           disallowed-macros = [
             {
               path = "std::dbg";
@@ -181,11 +180,11 @@ in
             }
           ];
           disallowed-types = [ ];
-          max-include-file-size = mkDefault 0;
-          missing-docs-in-crate-items = mkDefault true;
+          max-include-file-size = 0;
+          missing-docs-in-crate-items = true;
           inherit (cfg.clippy) msrv;
           type-complexity-threshold = cfg.clippy.typeComplexityThreshold;
-          warn-on-all-wildcard-imports = mkDefault true;
+          warn-on-all-wildcard-imports = true;
         };
         # SPDX-SnippetEnd
 
@@ -204,8 +203,8 @@ in
           target-version = cfg.ruff.targetVersion;
 
           format = {
-            indent-style = mkDefault "space";
-            skip-magic-trailing-comma = mkDefault true;
+            indent-style = "space";
+            skip-magic-trailing-comma = true;
           };
 
           lint = {
@@ -266,16 +265,16 @@ in
           };
 
           lint.flake8-copyright = {
-            notice-regex = mkDefault "(?i)(?:SPDX-(?:File|Snippet)CopyrightText:|Copyright|©)\\s+((?:\\(C\\)|©)\\s+)?(?:\\d{4}((-|,\\s)\\d{4})*)?";
+            notice-regex = "(?i)(?:SPDX-(?:File|Snippet)CopyrightText:|Copyright|©)\\s+((?:\\(C\\)|©)\\s+)?(?:\\d{4}((-|,\\s)\\d{4})*)?";
           };
 
           lint.flake8-quotes = {
-            docstring-quotes = mkDefault "double";
+            docstring-quotes = "double";
           };
 
           lint.isort = {
-            case-sensitive = mkDefault true;
-            split-on-trailing-comma = mkDefault false;
+            case-sensitive = true;
+            split-on-trailing-comma = false;
           };
 
           # Ignore `E402` (import violations) in all `__init__.py` files and in selected subdirectories
@@ -305,11 +304,11 @@ in
         # SPDX-License-Identifier: CC0-1.0
         defaultRustfmtConfig = {
           # See https://rust-lang.github.io/rustfmt/ for all available options
-          edition = mkDefault "2024";
-          match_block_trailing_comma = mkDefault true;
-          newline_style = mkDefault "Unix";
-          style_edition = mkDefault "2021";
-          use_try_shorthand = mkDefault true;
+          edition = "2024";
+          match_block_trailing_comma = true;
+          newline_style = "Unix";
+          style_edition = "2021";
+          use_try_shorthand = true;
 
           # Unstable, but in the future probably useful
           # group_imports = "StdExternalCrate" # Matches Python isort conventions
@@ -325,11 +324,11 @@ in
         # SPDX-License-Identifier: CC0-1.0
         defaultTaploConfig = {
           formatting = {
-            column_width = mkDefault 100;
-            indent_string = mkDefault "  ";
-            indent_tables = mkDefault true;
-            reorder_keys = mkDefault true;
-            trailing_newline = mkDefault false;
+            column_width = 100;
+            indent_string = "  ";
+            indent_tables = true;
+            reorder_keys = true;
+            trailing_newline = false;
           };
         };
         # SPDX-SnippetEnd
@@ -339,7 +338,7 @@ in
         # SPDX-License-Identifier: CC0-1.0
         defaultTyConfig = {
           terminal = {
-            error-on-warning = mkDefault true;
+            error-on-warning = true;
           };
         };
         # SPDX-SnippetEnd
@@ -348,29 +347,29 @@ in
         # SPDX-SnippetCopyrightText: 2026 Robin Walter <hello@robinwalter.me>
         # SPDX-License-Identifier: CC0-1.0
         defaultYamllintConfig = {
-          extends = mkDefault "default";
+          extends = "default";
           rules = {
             braces = {
-              level = mkDefault "error";
-              max-spaces-inside = mkDefault 1;
+              level = "error";
+              max-spaces-inside = 1;
             };
             brackets = {
-              level = mkDefault "error";
-              max-spaces-inside = mkDefault 1;
+              level = "error";
+              max-spaces-inside = 1;
             };
             comments = {
-              min-spaces-from-content = mkDefault 1;
+              min-spaces-from-content = 1;
             };
-            comments-indentation = mkDefault false;
+            comments-indentation = false;
             line-length = {
-              level = mkDefault "warning";
-              max = mkDefault 160;
+              level = "warning";
+              max = 160;
             };
             octal-values = {
-              forbid-explicit-octal = mkDefault true;
-              forbid-implicit-octal = mkDefault true;
+              forbid-explicit-octal = true;
+              forbid-implicit-octal = true;
             };
-            truthy = mkDefault "disable";
+            truthy = "disable";
           };
         };
         # SPDX-SnippetEnd
@@ -598,15 +597,15 @@ in
 
               nixfmt = {
                 enable = true;
-                indent = mkDefault 2;
-                strict = mkDefault true;
-                width = mkDefault 120;
+                indent = 2;
+                strict = true;
+                width = 120;
               };
 
               shellcheck = { };
               shfmt = {
-                indent_size = mkDefault 0; # 0 = use tabs
-                simplify = mkDefault true;
+                indent_size = 0; # 0 = use tabs
+                simplify = true;
               };
 
               statix = {
@@ -633,7 +632,7 @@ in
               formatter = {
                 # Clippy currently is not supported
                 clippy = {
-                  command = mkDefault "${pkgs.bash}/bin/bash";
+                  command = "${pkgs.bash}/bin/bash";
                   includes = [ "*.rs" ];
                   options = [
                     "-euc"
@@ -651,7 +650,7 @@ in
 
                 # The Ruff configuration support is currently very limited, therefore we create a custom formatter
                 ruff = {
-                  command = mkDefault "${pkgs.ruff}/bin/ruff";
+                  command = "${pkgs.ruff}/bin/ruff";
                   includes = [
                     "*.ipynb"
                     "*.py"
@@ -668,7 +667,7 @@ in
 
                 # Nushell formatting
                 nufmt = {
-                  command = mkDefault "${pkgs.nufmt}/bin/nufmt";
+                  command = "${pkgs.nufmt}/bin/nufmt";
                   includes = [ "*.nu" ];
                   options = [
                     "--config"
@@ -678,7 +677,7 @@ in
 
                 # The rustfmt configuration support is currently very limited, therefore we create a custom formatter
                 rustfmt = {
-                  command = mkDefault "${pkgs.rustfmt}/bin/rustfmt";
+                  command = "${pkgs.rustfmt}/bin/rustfmt";
                   includes = [ "*.rs" ];
                   options = [
                     "--config-file"
@@ -692,7 +691,7 @@ in
 
                 # Ty currently is not supported
                 ty = {
-                  command = mkDefault "${pkgs.ty}/bin/ty";
+                  command = "${pkgs.ty}/bin/ty";
                   includes = [
                     "*.ipynb"
                     "*.py"
