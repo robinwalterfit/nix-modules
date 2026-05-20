@@ -43,10 +43,7 @@ Check [`flake.nix`](./flake.nix), [`nix/dev/flake.nix`](./nix/dev/flake.nix) and
 ```nix
 {
   inputs = {
-    nix-modules = {
-      url = "github:robinwalterfit/nix-modules";
-      inputs.flake-parts.follows = "";
-    };
+    nix-modules.url = "github:robinwalterfit/nix-modules";
   };
 }
 ```
