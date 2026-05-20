@@ -16,7 +16,6 @@ let
   inherit (lib)
     literalExpression
     literalMD
-    mkDefault
     mkIf
     mkOption
     recursiveUpdate
@@ -50,8 +49,8 @@ let
   defaultZedSettings = {
     languages = {
       Nix = {
-        format_on_save = mkDefault "on";
-        tab_size = mkDefault 2;
+        format_on_save = "on";
+        tab_size = 2;
       };
     };
   };
