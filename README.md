@@ -3,9 +3,9 @@
 [![Conventional Branch](https://img.shields.io/badge/Conventional%20Branch-1.0.0-blue.svg?style=flat-square)](https://conventional-branch.github.io/)
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg?style=flat-square)](https://conventionalcommits.org)
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-3.0-4BAAAA.svg?style=flat-square)](./.github/CODE_OF_CONDUCT.md)
-[![prek](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/j178/prek/master/docs/assets/badge-v0.json)](https://github.com/j178/prek)
+[![prek](https://img.shields.io/endpoint?style=flat-square&url=https://raw.githubusercontent.com/j178/prek/master/docs/assets/badge-v0.json)](https://github.com/j178/prek)
 [![Latest Release](https://img.shields.io/github/v/release/robinwalterfit/nix-modules?style=flat-square)](https://github.com/robinwalterfit/nix-modules/releases)
-[![Built with Nix](https://img.shields.io/badge/NixOS-5277C3?style=for-the-badge&logo=nixos&logoColor=white)](https://github.com/NixOS/nixpkgs)
+[![Built with Nix](https://img.shields.io/badge/NixOS-5277C3?style=flat-square&logo=nixos&logoColor=white)](https://github.com/NixOS/nixpkgs)
 [![Zed](https://img.shields.io/badge/Zed-white?style=flat-square&logo=zedindustries&logoColor=084CCF)](https://zed.dev/)
 [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/robinwalterfit/nix-modules)
 
@@ -43,10 +43,7 @@ Check [`flake.nix`](./flake.nix), [`nix/dev/flake.nix`](./nix/dev/flake.nix) and
 ```nix
 {
   inputs = {
-    nix-modules = {
-      url = "github:robinwalterfit/nix-modules";
-      inputs.flake-parts.follows = "";
-    };
+    nix-modules.url = "github:robinwalterfit/nix-modules";
   };
 }
 ```

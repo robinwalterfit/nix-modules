@@ -24,10 +24,7 @@
       url = "github:numtide/treefmt-nix";
       inputs.nixpkgs.follows = "";
     };
-    nix-modules = {
-      url = "github:robinwalterfit/nix-modules";
-      inputs.flake-parts.follows = "";
-    };
+    nix-modules.url = "github:robinwalterfit/nix-modules";
   };
 
   outputs = _: {
