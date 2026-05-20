@@ -10,7 +10,6 @@
   config,
   lib,
   pkgs,
-  self,
   ...
 }:
 let
@@ -23,6 +22,8 @@ let
     recursiveUpdate
     types
     ;
+
+  packages = import ../../lib/packages.nix { };
 
   cfg = config.robinwalterfit.nix-modules;
 
@@ -275,20 +276,20 @@ in
 
     # Define list of packages that should always be available in devenv shells
     packages =
-      (self.lib.corePackages {
+      (packages.corePackages {
         inherit pkgs;
         inherit (cfg) useRustReimplementations;
       })
-      ++ (self.lib.debugPackages {
+      ++ (packages.debugPackages {
         inherit pkgs;
         inherit (cfg) useRustReimplementations;
       })
-      ++ (self.lib.developmentPackages {
+      ++ (packages.developmentPackages {
         inherit pkgs;
         inherit (cfg) useRustReimplementations;
       })
-      ++ (self.lib.devShellPackages pkgs)
-      ++ (self.lib.essentialPackages pkgs)
-      ++ (self.lib.securityAnalysisPackages pkgs);
+      ++ (packages.devShellPackages pkgs)
+      ++ (packages.essentialPackages pkgs)
+      ++ (packages.securityAnalysisPackages pkgs);
   };
 }
