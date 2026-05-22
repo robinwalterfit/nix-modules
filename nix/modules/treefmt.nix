@@ -265,7 +265,7 @@ in
           };
 
           lint.flake8-copyright = {
-            notice-regex = "(?i)(?:SPDX-(?:File|Snippet)CopyrightText:|Copyright|©)\\s+((?:\\(C\\)|©)\\s+)?(?:\\d{4}((-|,\\s)\\d{4})*)?";
+            notice-rgx = "(?i)(?:SPDX-(?:File|Snippet)CopyrightText:|Copyright|©)\\s+((?:\\(C\\)|©)\\s+)?(?:\\d{4}((-|,\\s)\\d{4})*)?";
           };
 
           lint.flake8-quotes = {
