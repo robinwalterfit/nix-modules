@@ -1,0 +1,16 @@
+# SPDX-FileCopyrightText: NONE
+# SPDX-License-Identifier: NONE
+---
+keys: []
+
+creation_rules:
+  - key_groups: []
+    path_regex: secrets/[^/]+\.(yaml|json|env|ini)$
+
+stores:
+  json:
+    indent: 2
+  json_binary:
+    indent: 2
+  yaml:
+    indent: 2
