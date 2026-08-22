@@ -9,21 +9,21 @@
     # As a consequence, this flake only provides dependencies, and
     # we can't use the `nix` CLI as expected.
 
-    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-    git-hooks = {
-      url = "github:cachix/git-hooks.nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     devenv = {
-      url = "github:cachix/devenv";
       inputs = {
         git-hooks.follows = "git-hooks";
         nixpkgs.follows = "nixpkgs";
       };
+      url = "github:cachix/devenv";
     };
-    treefmt-nix = {
-      url = "github:numtide/treefmt-nix";
+    git-hooks = {
       inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:cachix/git-hooks.nix";
+    };
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    treefmt-nix = {
+      inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:numtide/treefmt-nix";
     };
   };
 

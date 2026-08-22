@@ -2,8 +2,7 @@
 # SPDX-License-Identifier: MIT
 #
 # Meta information
-{ self, ... }:
-{
+{ self, ... }: {
   # See for more information: https://github.com/NixOS/nixpkgs/tree/master/maintainers
   maintainers = {
     robinwalterfit = {

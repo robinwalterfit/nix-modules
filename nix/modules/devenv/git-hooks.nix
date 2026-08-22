@@ -6,8 +6,7 @@
 # See also:
 #   - https://devenv.sh/git-hooks/
 #   - https://github.com/cachix/git-hooks.nix
-{ pkgs, ... }:
-{
+{ pkgs, ... }: {
   git-hooks = {
     default_stages = [ "pre-commit" ];
 
