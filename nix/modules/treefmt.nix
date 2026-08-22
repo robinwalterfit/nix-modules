@@ -583,7 +583,21 @@ in
             # Built-in formatters
             programs = {
               biome = {
-                settings = recursiveUpdate (recursiveUpdate defaultBiomeConfig { vcs.root = toString ../../.; }) cfg.biome.extraConfig;
+                # NOTE: `vcs.useIgnoreFile` is disabled here on purpose.
+                #
+                # In the treefmt pipeline Biome is invoked with an explicit file list, so it never
+                # traverses the tree itself and cannot format files treefmt did not select. treefmt
+                # (and the git-hooks/pre-commit layer on top of it) already filter out `.gitignore`d
+                # files, so Biome does not need to re-read the ignore file.
+                #
+                # If `useIgnoreFile` were left enabled, Biome would resolve `vcs.root` against the
+                # generated config in the nix store and fail with "couldn't find an ignore file"
+                # because no `.gitignore` is copied into the store. The standalone `biome.json`
+                # (symlinked into the project) keeps `useIgnoreFile = true` and works fine.
+                #
+                # NOTE: re-enabling `useIgnoreFile` via `cfg.biome.extraConfig` will resurrect the
+                # nix-store resolution failure above.
+                settings = recursiveUpdate defaultBiomeConfig (recursiveUpdate { vcs.useIgnoreFile = false; } cfg.biome.extraConfig);
                 validate = {
                   schema = pkgs.fetchurl {
                     url = "https://biomejs.dev/schemas/2.3.10/schema.json";
