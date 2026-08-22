@@ -2,8 +2,7 @@
 # SPDX-License-Identifier: NONE
 #
 # Meta information
-{ self, ... }:
-{
+{ self, ... }: {
   projectName = "home-manager-config";
 
   # Use (short) git revision hash or "unknown", if there are uncommitted changes
