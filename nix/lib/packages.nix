@@ -108,6 +108,7 @@ _: {
       betterleaks
       cosign
       grype
+      kics
       syft
       trivy
       trufflehog

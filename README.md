@@ -69,9 +69,9 @@ export DEVENV_IN_DIRENV_SHELL=true
 
 watch_file flake.nix
 watch_file flake.lock
-watch_file nix/dev/flake.lock
 # shellcheck disable=SC2046
-watch_file $(find './nix' -name '*.nix')
+watch_file $(find './nix/dev' -name '*.nix')
+watch_file nix/dev/flake.lock
 
 use flake . --no-pure-eval
 ```
